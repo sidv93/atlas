@@ -1,0 +1,54 @@
+.bg-white {
+    background-color: white;
+    margin-top: 30vh;
+}
+.view-runs {
+    background-color: #5fcc9c;
+    color: white;
+    border: none;
+    width: 80%;
+}
+.results {
+    background-color: #2a3441;
+    color: white;
+    border: none;
+    width: 80%;
+}
+.card-headings {
+    color: #485465;
+    font-family: Avenir;
+    display: inline-block;
+    font-size: 18px;
+    /* margin-left: 2%; */
+}
+.free-text {
+    color: #8ca0b3;
+    font-family: Avenir;
+    font-size: 12px;
+    /* margin-left: 2%; */
+}
+.legend-more {
+    float: right;
+    margin-top: 15px;
+}
+.center {
+    text-align: center;
+}
+.bg-grey {
+    background-color: #eff3f6;
+}
+.no-padding {
+    padding: 0;
+    margin-left: 2%;
+    margin-right: 5%;
+}
+.pointer {
+    cursor: pointer;
+}
+.bg-grey /deep/ .ngx-pagination .current{
+    background: #eaeaea;
+    color: grey;
+}
+.center {
+    text-align: center;
+}

@@ -1,0 +1,23 @@
+<div class="col-md-12 top-25">
+  <div class="col-md-2">
+    <div class="tab" (click)="selectedTab = 0; ;">
+      <a routerLink="progression-test" [ngClass]="{'tab-selected': selectedTab === 0, 'black': selectedTab === 0 }" class="no-underline">Progression Test</a>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="tab" (click)="selectedTab = 1; ;">
+      <a routerLink="regression-test" [ngClass]="{'tab-selected': selectedTab === 1, 'black': selectedTab === 1 }" class="no-underline">Regression Test</a>
+    </div>
+  </div>
+  <div class="col-md-offset-3 col-md-5">
+    <select class="form-control deploy-filters">
+      <option>My Project#1</option>
+    </select>
+    <select class="form-control deploy-filters">
+      <option>Release 2.2</option>
+    </select>
+    <select class="form-control deploy-filters">
+      <option>Call Processing</option>
+    </select>
+  </div>
+</div>

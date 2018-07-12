@@ -1,0 +1,48 @@
+<div class="col-md-12 top-bar border-bottom">
+  <div class="col-md-2">
+    <div class="project-menu">
+      <ng-container *ngIf="globalService.urlFlag">
+          <select class="form-control no-border no-padding" name="product" [(ngModel)]="product" (change)="changeProduct()">
+              <option [value]="productItem.productID" *ngFor="let productItem of globalService.productList">{{productItem.productName}}</option>
+            </select>
+      </ng-container>
+      <ng-container *ngIf="!globalService.urlFlag">
+          <select class="form-control no-border no-padding">
+              <option>Unigy</option>
+            </select>
+      </ng-container>
+      <p class="project-name">Product</p>
+    </div>
+  </div>
+
+  <div class="col-md-offset-7 col-md-3">
+    <div class="dropdown right">
+      <div class="toggle-container">
+        <div class="btn dropdown-toggle white"  data-toggle="dropdown">
+          <div class="welcome-container">
+            <span class="avenir">Welcome Admin</span>
+            <p class="free-text">{{today}}</p>
+          </div>
+          <div class="initials-container">
+            <div class="initials">
+              <p class="text-center">A</p>
+            </div>
+          </div>
+          <i class="fa fa-caret-down caret-position"></i>
+        </div>
+        <ul class="dropdown-menu">
+          <li>
+            <a>My Profile</a>
+          </li>
+          <li>
+            <a>Settings</a>
+          </li>
+          <li>
+            <a routerLink='/login' (click)="logout()">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

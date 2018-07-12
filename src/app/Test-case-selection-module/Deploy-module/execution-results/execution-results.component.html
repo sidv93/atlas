@@ -1,0 +1,197 @@
+<div class="container no-margins">
+  <div class="col-md-12 card top-5 border-bottom">
+    <div class="col-md-4 border-right card-height">
+      <p class="card-headings top-2">Regression Testing Progress</p>
+      <p class="free-text">Completed: {{ERDetails.regressionTestingProcess[0]}}%
+        <span style="float: right">{{((+ERDetails.regressionTestingProcess[0])/100)*ERDetails.regressionTestingProcess[1]}} / {{ERDetails.regressionTestingProcess[1]}}</span>
+      </p>
+      <div class="progress" style="border-radius: 5px;height: 0.8vh">
+        <div class="progress-bar" id="progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <span class="sr-only">70% Complete</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 card-height">
+      <p class="card-headings top-2">APFD Value</p>
+      <div class="col-md-12">
+        <div class="col-md-1">
+          <p class="free-text">Poor</p>
+        </div>
+        <ng-container *ngIf="!loading">
+          <img src="assets/images/gps.png" id="apfd-value" class="GPS">
+          <span class="free-text apd-value">APFD Value {{ERDetails.APFDValue}}</span>
+        </ng-container>
+        <div class="col-md-1 float-right">
+          <p class="free-text">Best</p>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="progress no-padding" style="height: 0.8vh;">
+          <div class="progress-bar" role="progressbar" style="width:10%; background-color: #eaf7ff"></div>
+          <div class="progress-bar" role="progressbar" style="width:10%; background-color: #daefff"></div>
+          <div class="progress-bar" role="progressbar" style="width:10%; background-color: #add7fa"></div>
+          <div class="progress-bar" role="progressbar" style="width:10%; background-color: #7bbdf7"></div>
+          <div class="progress-bar" role="progressbar" style="width:10%; background-color: #2a98d8"></div>
+          <div class="progress-bar" role="progressbar" style="width:10%; background-color: #2482b8"></div>
+          <div class="progress-bar" role="progressbar" style="width:10%; background-color: #166da2"></div>
+          <div class="progress-bar" role="progressbar" style="width:10%; background-color: #5a91b6"></div>
+          <div class="progress-bar" role="progressbar" style="width:10%; background-color: #0c4f76"></div>
+          <div class="progress-bar" role="progressbar" style="width:10%; background-color: #020f18"></div>
+        </div>
+        <div class="progress-legend">
+          <span class="free-text">0.0</span>
+        </div>
+        <div class="progress-legend">
+          <span class="free-text">0.1</span>
+        </div>
+        <div class="progress-legend">
+          <span class="free-text">0.2</span>
+        </div>
+        <div class="progress-legend">
+          <span class="free-text">0.3</span>
+        </div>
+        <div class="progress-legend">
+          <span class="free-text">0.4</span>
+        </div>
+        <div class="progress-legend">
+          <span class="free-text">0.5</span>
+        </div>
+        <div class="progress-legend">
+          <span class="free-text">0.6</span>
+        </div>
+        <div class="progress-legend">
+          <span class="free-text">0.7</span>
+        </div>
+        <div class="progress-legend">
+          <span class="free-text">0.8</span>
+        </div>
+        <div class="progress-legend">
+          <span class="free-text">0.9</span>
+        </div>
+        <!-- <div class="progress-legend"> -->
+        <span class="free-text">1.0</span>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 card card-height">
+    <div class="col-md-4 border-right card-height">
+      <div class="top-2">
+        <img src="assets/images/graph-icon@2x.png">&nbsp;&nbsp;
+        <p class="card-headings">Total Failed Test Cases Count</p>
+        <span class="failed-cases">{{ERDetails.totalFailedTests}}</span>
+      </div>
+    </div>
+    <div class="col-md-8 card-height">
+      <div class="top-2">
+        <p class="card-headings block">Failed Test Cases Prioritization</p>
+        <ng-container *ngIf="!loading">
+          <div class="top-2">
+            <div class="bullet inline bullet-p1"></div>
+            <span class="free-text right-5">P1 - {{ERDetails.p1Values}}</span>
+            <div class="bullet inline bullet-p2"></div>
+            <span class="free-text right-5">P2 - {{ERDetails.p2Values}}</span>
+            <div class="bullet inline bullet-p3"></div>
+            <span class="free-text right-5">P3 - {{ERDetails.p3Values}}</span>
+            <div class="bullet inline bullet-p4"></div>
+            <span class="free-text right-5">P4 - {{ERDetails.p4Values}}</span>
+            <div class="bullet inline bullet-p5"></div>
+            <span class="free-text">P5 - {{ERDetails.p5Values}}</span>
+            <div class="priority-wrap">
+              <div id="p1" class="priority"></div>
+              <div id="p2" class="priority"></div>
+              <div id="p3" class="priority"></div>
+              <div id="p4" class="priority"></div>
+              <div id="p5" class="priority"></div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12 card top-5">
+    <table class="table table-responsive table-striped table-bordered">
+      <caption>
+        <div class="caption-div-parentdetails">
+          <span class="avenir Projects">Rank and Priority Analysis of Failed Test Cases</span>
+        </div>
+        <div class="content-right">
+          <i class="fa fa-ellipsis-h font-28"></i>
+        </div>
+        <br>
+        <br>
+        <div class="priority-filter">
+          <span class="free-text">Priority</span>
+          <select class="form-control select" name="priority" [(ngModel)]="tablePriority" (change)="changePriority()">
+            <option>All</option>
+            <option>P1</option>
+            <option>P2</option>
+            <option>P3</option>
+            <option>P4</option>
+            <option>P5</option>
+          </select>
+        </div>
+        <div class="search-bar">
+          <form [formGroup]="searchForm">
+            <input type="text" class="form-control" [formControl]="searchForm.controls['search']" placeholder="Search..(Test case ID)">
+          </form>
+        </div>
+      </caption>
+      <thead class="table-head Rectangle-4">
+        <tr>
+          <th class="table-heading">Test Case ID</th>
+          <th class="table-heading">Priority Group</th>
+          <th class="table-heading">
+            Rank
+            <ng-container *ngIf="rankSorted">
+              <i class="fa fa-caret-down" style="cursor: pointer" (click)="rankSort()"></i>
+            </ng-container>
+            <ng-container *ngIf="!rankSorted">
+              <i class="fa fa-caret-up" style="cursor: pointer" (click)="rankSort()"></i>
+            </ng-container>
+          </th>
+          <th class="table-heading" colspan="3">
+            <span class="left col-md-12">Failures</span>
+            <div class="col-md-4">
+              <span class="left">1 Month</span>
+            </div>
+            <div class="col-md-4">
+              <span class="left">1M - 2M</span>
+            </div>
+            <div class="col-md-4">
+              <span class="left">2M - 3M</span>
+            </div>
+          </th>
+          <th class="table-heading">Total Execution Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="center" *ngIf="loading">
+          <td colspan="8">
+            <i class="fa fa-spinner fa-spin" style="font-size:32px"></i>
+          </td>
+        </tr>
+        <ng-container *ngIf="!loading">
+          <tr *ngFor="let item of rankPriority | paginate:{
+            itemsPerPage:10,
+            currentPage:currentPage}">
+            <td class="table-data">{{item.testCaseID}}</td>
+            <td class="table-data">{{item.priorityGroup}}</td>
+            <td class="table-data">{{item.rank}}</td>
+            <td class="table-data">{{item.failuresOneMonth}}</td>
+            <td class="table-data">{{item.failuresOneToTwoMonth}}</td>
+            <td class="table-data">{{item.failuresTwoToThreeMonth}}</td>
+            <td class="table-data">{{item.totalExecutionTime}}
+            </td>
+          </tr>
+          <tr *ngIf="!loading">
+            <td colspan="8" class="center">
+              <pagination-controls class="bg-grey" (pageChange)="currentPage=$event"></pagination-controls>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

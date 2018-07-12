@@ -1,0 +1,36 @@
+.tab-selected {
+    border-bottom: solid 3px #209ae5;
+  }
+  .top-25 {
+    padding-top: 25px;
+  }
+  .tab {
+    color: #324659;
+    font-family: Avenir;
+    cursor: pointer;
+    /* text-align: center; */
+}
+.no-underline {
+  padding-bottom: 5%;
+  text-decoration: none;
+  color: grey;
+}
+.bg-white {
+    background-color: white;
+    height: 7vh;
+}
+.margin-left-2 {
+  margin-left: 1%;
+}
+.black {
+  color: black;
+}
+.top-tabs {
+  height: 40px;
+  padding: 15px 15px 0px 20px;
+  opacity: 0.8;
+  background-color: #ffffff;
+}
+.not-allowed {
+  cursor: not-allowed;
+}

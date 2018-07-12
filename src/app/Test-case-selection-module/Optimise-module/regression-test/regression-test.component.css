@@ -1,0 +1,147 @@
+.no-padding {
+    padding: 0;
+    margin: 0;
+    margin-top: 25vh;
+}
+.chart-container {
+    background-color: white;
+    width: 95%;
+    /* height: 50vh ; */
+    margin-left: 2%;
+    margin-top: 2vh;
+    box-shadow: 0 2px 0 1px rgba(0, 0, 0, 0.06);
+}
+.free-text {
+    font-family: Avenir;
+    color: #76889a;
+}
+.exec-time {
+    width: 40%;
+    display: inline-block
+}
+.select {
+    width: 70%;
+    display: inline-block;
+}
+.left-options {
+    margin-top: 2vh;
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: 2%;
+}
+.right-buttons {
+    margin-top: 2vh;
+    float: right;
+    margin-right: 2%;
+}
+.hor-line {
+    background-color: #e4eef0;
+    height: 1vh;
+    margin-top: 3vh;
+}
+.search-bar {
+    /* width: 30%; */
+}
+.table-head {
+    background-color: #2a3441; 
+    color: grey;
+    font-family: Avenir
+}
+.table-heading {
+    text-align: center;
+    font-size: 12px;
+    color: white;
+}
+.left {
+    text-align: left;
+}
+.top-3 {
+    margin-top: 3vh
+}
+.center {
+    text-align: center;
+}
+.table-data {
+    font-family: Avenir;
+    text-align: left;
+}
+.bg-grey /deep/ .ngx-pagination .current{
+    background: #eaeaea;
+    color: grey;
+}
+.ball {
+    height: 2vh;
+    width: 2vh;
+    border-radius: 50%;
+    background-color: #449bd7;
+    margin-left: 50%;
+    margin-top: -3px;
+}
+.priorities {
+    width: 20%;
+    text-align: center;
+    border-right: 1px solid #e4eef0;
+    border-bottom: 1px solid #e4eef0;
+    display: inline-block;
+    font-family: Avenir;
+    color: white;
+}
+.no-right {
+    border-right: none;
+}
+.bottom-2 {
+    margin-bottom: 2vh;
+}
+.priority-cont {
+    margin-left: 10%;
+    margin-right: 10%;
+    white-space: nowrap;
+}
+.slidecontainer {
+    margin-left: 10%;
+    margin-right: 10%;
+    /* width: 100%; */
+    margin-top: 3vh;
+}
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 1vh;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.slider:hover {
+    opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #449bd7;
+    cursor: pointer;
+}
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #449bd7;
+    cursor: pointer;
+}
+.red {
+    color: #e3475a !important;
+}
+.green {
+    color: #5fcc9c !important;
+}
+.priority-background {
+    background-color: #74a9cd;
+}
+.p-back {
+    background-color: #74a9cd;
+}

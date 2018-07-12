@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="173" height="49" viewBox="0 0 173 49">
+    <defs>
+        <path id="b" d="M1 0h173v1176.357H1z"/>
+        <filter id="a" width="109.2%" height="101.4%" x="-2.3%" y="-.7%" filterUnits="objectBoundingBox">
+            <feOffset dx="4" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15123981 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(-1 -115)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="#485465" xlink:href="#b"/>
+        </g>
+        <path fill="#58B6F0" d="M0 .44h173V49H0z" opacity=".374"/>
+        <path fill="#209AE5" d="M0 .44h3V49H0z"/>
+        <path stroke="#737C89" stroke-linecap="square" stroke-width=".64" d="M-.08 48.947h173" opacity=".213"/>
+        <text fill="#FFF" font-family="Avenir-Black, Avenir" font-size="10" font-weight="700" transform="translate(-1 -42)">
+            <tspan x="42" y="59">Code Defect </tspan> <tspan x="42" y="76.28">Prediction</tspan>
+        </text>
+        <path fill="#D3E0FA" fill-rule="nonzero" d="M159.096 29.512l-.896-.896 2.56-2.56-2.56-2.56.896-.896 3.456 3.456z"/>
+    </g>
+</svg>

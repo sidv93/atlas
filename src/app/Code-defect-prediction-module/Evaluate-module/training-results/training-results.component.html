@@ -1,0 +1,181 @@
+<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 defect-container">
+  <div class="cont top-25 mask">
+    <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 mask result-container">
+      <div class="result-cont mask col-md-12">
+        <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 details-container">
+          <p class="head-label">Project</p>
+          <p class="head-value">{{experimentData.project}}</p>
+        </div>
+        <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 details-container">
+          <p class="head-label">Version</p>
+          <p class="head-value">{{experimentData.version}}</p>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 details-container">
+          <p class="head-label">Description</p>
+          <p class="head-value">{{experimentData.description}}</p>
+        </div>
+      </div>
+
+      <div class="result-cont mask col-md-12">
+
+        <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 details-container">
+          <p class="head-label">Best Model</p>
+          <p class="head-value">{{experimentData.bestModel}}</p>
+        </div>
+        <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 details-container">
+          <p class="head-label">Best Accuracy</p>
+          <p class="head-value">{{experimentData.bestAccuracy.toPrecision(3)}}%</p>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 details-container">
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 no-padding">
+            <p class="head-label">Start Time</p>
+            <p class="head-value">{{experimentData.startTime | date: 'medium'}}</p>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 no-padding">
+            <p class="head-label">End Time</p>
+            <p class="head-value">{{experimentData.endTime | date: 'medium'}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 mask sucss">
+      <p class="success">{{experimentData.status.toUpperCase()}}</p>
+      <button class="btn deploy">Deploy</button>
+      <div class="success-conatiner">
+        <img src="assets/images/success.png" srcset="assets/images/success@2x.png 2x,
+              assets/images/success@3x.png 3x" class="img-Success">
+      </div>
+      <p class="time time-taken"> Time Taken </p>
+      <p class="time seconds"> {{experimentData.timeTaken}} </p>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12 defect-container">
+  <div class="col-md-6 ">
+    <div class="commit-container  left-graph  top-25 no-padding">
+      <div class="col-md-7 graph-heading">
+        <div class="col-md-12">
+          Accuracy
+        </div>
+      </div>
+
+      <div class="col-md-5 graph-heading pad-left-20">
+        <div class="bullet inline bullet-blue"></div>&nbsp;
+        <span class="inline legend-right head-label font-grey">PCA</span>
+        <div class="bullet inline bullet-light-blue"></div>&nbsp;
+        <span class="inline legend-right head-label font-grey"> Non PCA</span>
+        <img src="assets/images/more-icon_4@2x.png" srcset="img/more-icon@2x.png 2x,
+                             img/more-icon@3x.png 3x" class="legend-more">
+      </div>
+
+      <div class="col-md-12 border-grey"></div>
+
+      <div class="container-fluid" style="height:40vh;width: 100%; display: inline-block;margin-top: 6vh;">
+        <canvas id="accuracyChartVertical" #bar>
+          {{accuracy}}
+        </canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="commit-container right-graph top-25 no-padding">
+      <div class="col-md-7 graph-heading">
+        <div class="col-md-12">
+          F1-Score
+        </div>
+      </div>
+
+      <div class="col-md-5 graph-heading  pad-left-20">
+        <div class="bullet inline bullet-blue"></div>&nbsp;
+        <span class="inline legend-right head-label font-grey">PCA</span>
+        <div class="bullet inline bullet-light-blue"></div>&nbsp;
+        <span class="inline legend-right head-label font-grey">Non PCA</span>
+        <img src="assets/images/more-icon_4@2x.png" srcset="img/more-icon@2x.png 2x,
+                               img/more-icon@3x.png 3x" class="legend-more">
+      </div>
+
+      <div class="col-md-12 border-grey"></div>
+      <div class="container-fluid" style="height:40vh;width: 100%; display: inline-block;margin-top: 6vh;">
+        <canvas id="fscoreChartVertical" #bar>
+          {{fscore}}
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-12 defect-container">
+  <div class="col-md-6 ">
+    <div class="commit-container  left-graph  top-25 no-padding">
+      <div class="col-md-7 graph-heading">
+        <div class="col-md-12">
+          Precision
+        </div>
+      </div>
+
+      <div class="col-md-5 graph-heading pad-left-20">
+        <div class="bullet inline bullet-blue"></div>&nbsp;
+        <span class="inline legend-right head-label font-grey">PCA</span>
+        <div class="bullet inline bullet-light-blue"></div>&nbsp;
+        <span class="inline legend-right head-label font-grey">Non PCA</span>
+        <img src="assets/images/more-icon_4@2x.png" srcset="img/more-icon@2x.png 2x,
+                             img/more-icon@3x.png 3x" class="legend-more">
+      </div>
+
+      <div class="col-md-12 border-grey"></div>
+      <div class="container-fluid" style="height:40vh;width: 100%; display: inline-block;margin-top: 6vh;">
+        <canvas id="precisionChartVertical" #bar>
+          {{precision}}
+        </canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="commit-container right-graph top-25 no-padding">
+      <div class="col-md-7 graph-heading">
+        <div class="col-md-12">
+          Recall
+        </div>
+      </div>
+
+      <div class="col-md-5 graph-heading pad-left-20">
+        <div class="bullet inline bullet-blue"></div>&nbsp;
+        <span class="inline legend-right head-label font-grey">PCA</span>
+        <div class="bullet inline bullet-light-blue"></div>&nbsp;
+        <span class="inline legend-right head-label font-grey">Non PCA</span>
+        <img src="assets/images/more-icon_4@2x.png" srcset="img/more-icon@2x.png 2x,
+                               img/more-icon@3x.png 3x" class="legend-more">
+      </div>
+
+      <div class="col-md-12 border-grey"></div>
+      <div class="container-fluid" style="height:40vh;width: 100%; display: inline-block;margin-top: 6vh;">
+        <canvas id="recallChartVertical" #bar>
+          {{recall}}
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="col-md-12 defect-container">
+  <div class="commit-container  left-graph  top-25 no-padding runflow-container">
+    <div class="col-md-12 top-25">
+      <div class="col-md-12">
+        Training Run Flow
+      </div>
+    </div>
+    <div class="col-md-12 border-grey">
+      <div class="col-md-12">
+        <p class="project-name">Flow</p>
+      </div>
+    </div>
+    <div class="container-fluid" style="height:80%;width: 100%; display: inline-block;margin-top: 6vh;">
+      <div id="trainingFlowRun" #bar style="height:100%;width: 100%;">
+
+      </div>
+    </div>
+  </div>
+</div> -->

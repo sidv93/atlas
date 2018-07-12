@@ -1,0 +1,128 @@
+<div class="col-md-12">
+  <div class="cont top-20">
+    <table class="table table-striped table-responsive">
+      <caption>
+        <div class="col-md-12">
+          <div class="col-md-3 caption-div-parentdetails">
+            <select class="form-control filters width-50" name="project" [(ngModel)]="project" (change)="changeProject()">
+              <option [value]="project" *ngFor="let project of projects">{{project.projectName}}</option>
+            </select>
+            <br/>
+            <span class="free-text noOfProjects">Project Summary</span>
+          </div>
+          <div class="col-md-offset-4 col-md-1">
+            <button class="btn btn-default btn-borderless" *ngIf="!expanded" (click)="expandAll(); expanded = true">Expand All</button>
+            <button class="btn btn-default btn-borderless" *ngIf="expanded" (click)="contractAll();expanded = false">Contract All</button>
+          </div>
+          <div class="col-md-3">
+            <div class="input-wrapper">
+              <i class="fa fa-search input-icon" aria-hidden="true"></i>
+              <form [formGroup]="searchForm">
+                <input type="text" class="form-control" [formControl]="searchForm.controls['search']" placeholder="Search..(Commit, Author)">
+              </form>
+            </div>
+          </div>
+          <div class="col-md-1">
+            <img src="assets/images/more-icon_4@2x.png" srcset="img/more-icon@2x.png 2x,
+                    img/more-icon@3x.png 3x" class="legend-more">
+          </div>
+        </div>
+      </caption>
+      <thead>
+        <tr style="background-color: #eaeaea; color: grey;font-family: Avenir">
+          <th >
+            Expand
+          </th>
+          <th>
+            Commit
+          </th>
+          <th>
+            Commit Time
+            <i class="fa fa-caret-down pointer" *ngIf="commitSort" (click)="commitTimeSort()"></i>
+            <i class="fa fa-caret-up pointer" *ngIf="!commitSort" (click)="commitTimeSort()"></i>
+          </th>
+          <th>
+            Author
+            <i class="fa fa-caret-down pointer" *ngIf="authorSort" (click)="sortByAuthor()"></i>
+            <i class="fa fa-caret-up pointer" *ngIf="!authorSort" (click)="sortByAuthor()"></i>
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Prediction
+            <!-- <i class="fa fa-caret-down pointer" *ngIf="predictionSort" (click)="sortByPrediction()"></i>
+            <i class="fa fa-caret-up pointer" *ngIf="!predictionSort" (click)="sortByPrediction()"></i> -->
+          </th>
+          <th>
+            File Details
+          </th>
+          <th>
+            Version
+          </th>
+          <th>
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody style="font-family: Avenir; font-size: 13px">
+        <tr *ngIf="loading">
+          <td colspan="9" class="center">
+            <i class="fa fa-spinner fa-spin" style="font-size:32px"></i>
+          </td>
+        </tr>
+        <ng-container *ngIf="!loading">
+          <tr *ngFor="let item of topLevel  | paginate: {
+                  itemsPerPage: 10,
+                  currentPage: currentPage }">
+            <td class="form-table">
+              <span *ngIf="item.more === 'expand'">
+                <i class="fa fa-caret-right pointer" (click)="expand(item.commitid)"></i>
+              </span>
+              <span *ngIf="item.more === 'none'">
+                <!-- <i class="fa fa-minus"></i> -->
+              </span>
+              <span *ngIf="item.more === 'expanded'" (click)="contract(item)">
+                <i class="fa fa-minus pointer"></i>
+              </span>
+            </td>
+            <td class="form-table">{{item.commitid}}</td>
+            <td class="form-table">{{item.time | date: 'medium'}}</td>
+            <td class="form-table">{{item.author}}</td>
+            <td class="form-table">{{item.type}}</td>
+            <td class="form-table">
+              <ng-container *ngIf="item.prediction === 'Buggy'">
+                <img src="../assets/images/bug-selected.png" srcset="../assets/images/oval-1@2x.png 2x,
+                  ../assets/images/oval-1@3x.png 3x">
+              </ng-container>
+              <ng-container *ngIf="item.prediction === 'Clean'">
+                  <img src="../assets/images/tick.png" srcset="../assets/images/oval-1@2x.png 2x,
+                    ../assets/images/oval-1@3x.png 3x">
+                </ng-container>
+            </td>
+            <td class="form-table">
+              <a class="pointer" (click)="openFileHistory(item.file)">{{item.file}}</a>
+            </td>
+            <td class="form-table ">{{item.version}}</td>
+            <td class="form-table">
+              <span *ngIf="item.prediction === 'Clean'; then clean else buggy"></span>
+              <ng-template #clean>
+                  <img src="../assets/images/bug-unselected.png" srcset="../assets/images/oval-1@2x.png 2x,
+                  ../assets/images/oval-1@3x.png 3x" class="pointer">
+              </ng-template>
+              <ng-template #buggy>
+                  <img src="../assets/images/shape-unselected.png" srcset="../assets/images/oval-1@2x.png 2x,
+                  ../assets/images/oval-1@3x.png 3x" class="pointer">
+              </ng-template>
+            </td>
+          </tr>
+          <tr *ngIf="!loading">
+            <td colspan="8" class="center">
+              <pagination-controls class="bg-grey" (pageChange)="currentPage = $event"></pagination-controls>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

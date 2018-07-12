@@ -1,0 +1,36 @@
+<div class="logo-container">
+  <img src="assets/images/hamburger.png" srcset="img/menu-right@2x.png 2x,
+    img/menu-right@3x.png 3x" class="menu-icon" (click)="leftPaneSwitch()" [ngClass]="{'menu-icon-expanded': globalService.expanded}">
+  <img src="assets/images/atlas-logo@2x.png" srcset="img/logo@2x.png 2x,
+                  img/logo@3x.png 3x" class="logo" *ngIf="!globalService.expanded">
+</div>
+<div class="row height-15 top-25 pointer" [ngClass]="{'selected-dashboard':selectedPane === 0}">
+  <div (click)="selectedPane = 0; setSession();">
+    <img src="assets/images/dashboard-icon.png" srcset="img/dashboard-half@2x.png 2x,
+      img/dashboard-half@3x.png 3x" class="dashboard-icon" [ngClass]="{'dashboard-expanded': globalService.expanded}">
+    <p class="dashboard inline top-4 left-5" *ngIf="!globalService.expanded">Dashboard</p>
+    <i class="fa fa-chevron-right top-4-half right-arrow chevrons" *ngIf="!globalService.expanded"></i>
+  </div>
+</div>
+<div class="row height-15 pointer" [ngClass]="{'selected-dashboard':selectedPane === 1}">
+  <div (click)="selectedPane = 1; setSession(); navigate()">
+    <div class="circle red-border top-4" [ngClass]="{'margin-left-40': globalService.expanded, 'bg-red': selectedPane === 1}"></div>
+    <p class="dashboard inline top-4 right-10" *ngIf="!globalService.expanded">Code Defect Prediction</p>
+    <i class="fa fa-chevron-right right-arrow top-4-half chevrons" *ngIf="!globalService.expanded"></i>
+  </div>
+</div>
+<div class="row height-15 pointer" [ngClass]="{'selected-dashboard':selectedPane === 3}">
+  <div (click)="selectedPane = 3; setSession(); navigate()">
+    <div class="circle green-border" [ngClass]="{'margin-left-40': globalService.expanded, 'bg-green': selectedPane === 3}"></div>
+    <p class="dashboard inline top-4 right-10" *ngIf="!globalService.expanded">Test Case Prioritization</p>
+    <i class="fa fa-chevron-right right-arrow top-4-half chevrons" *ngIf="!globalService.expanded"></i>
+  </div>
+</div>
+<div class="row height-15 pointer bottom-border" [ngClass]="{'selected-dashboard':selectedPane === 2}">
+  <div (click)="selectedPane = 2; setSession()">
+    <div class="circle orange-border top-4" [ngClass]="{'margin-left-40': globalService.expanded, 'bg-yellow': selectedPane === 2}"></div>
+    <p class="dashboard inline top-4 right-10" *ngIf="!globalService.expanded">Root Cause Analysis</p>
+    <i class="fa fa-chevron-right right-arrow top-4-half chevrons" *ngIf="!globalService.expanded"></i>
+  </div>
+</div>
+

@@ -1,0 +1,48 @@
+.tab-selected {
+    border-bottom: solid 3px #209ae5;
+  }
+  .top-25 {
+    margin-top: 25px;
+  }
+  .tab {
+    color: #324659;
+    font-family: Avenir;
+    cursor: pointer;
+}
+.no-underline {
+  padding-bottom: 5%;
+  text-decoration: none;
+  color: grey;
+}
+.black {
+  color: black;
+}
+.not-allowed {
+  cursor: not-allowed;
+}
+.jobs-running {
+  height: 10vh;
+  background-image: url("/assets/images/Graph-grey-pic.png");
+  background-repeat: no-repeat;
+}
+.green {
+  color: #1bc45c;
+}
+.red {
+  color: red;
+}
+.font-22 {
+  font-size: 22px;
+}
+.not-allowed {
+  cursor: not-allowed;
+}
+.inline {
+  display: inline-block;
+}
+.left-2 {
+  margin-left: 1%;
+}
+.right-2 {
+  margin-right: 2%;
+}

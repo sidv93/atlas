@@ -1,0 +1,158 @@
+.bg-grey {
+    /* min-width: 70vh; */
+    background-color: #eff3f6;
+}
+.project-name {
+    font-family: Avenir;
+    text-align: left;
+    color: #8ca0b3;
+    display: block;
+}
+.loc-container {
+    background-color: #ffffff;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+}
+.card-headings {
+    color: #485465;
+    font-family: Avenir;
+    display: inline-block;
+}
+.more-icon {
+    float: right;
+    margin-top: 15px;
+}
+.top-25 {
+    margin-top: 25px;
+}
+.top-15 {
+    margin-top: 15px;
+}
+.left-10 {
+    margin-left: 10%;
+}
+.file-title-container {
+    background-color: #209ae5;
+    width: 45%;
+    margin-bottom: 3vh;
+}
+.file-name-title {
+    font-family: Avenir;
+    font-size: 12px;
+    color: rgb(233, 231, 231);
+    padding: 0 !important;
+}
+.file-name {
+    font-family: Avenir;
+    color: white;
+    padding: 0 !important;
+    word-wrap: break-word;
+}
+.arrow {
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid transparent !important;
+    border-top: 12px solid transparent;
+    display: block;
+    height: 0;
+    position: absolute;
+    top: 29%;
+    width: 0;
+    left: 40%;
+}
+.v-line {
+    border-left: 10px solid #edf3f7;
+    height: 50vh;
+    position: absolute;
+    left: 29%;
+    margin-left: -3px;
+}
+.timeline-icon {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    color: #ffffff;
+    display: block;
+    height: 30px;
+    left: 26%;
+    position: absolute;
+    text-align: center;
+    top: 27%;
+    width: 30px;
+}
+.right-data {
+    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.04);
+    background-color: #f7fafc;
+    border: solid 1px #bbd4e5;
+    height: 10%;
+}
+.timeline-green {
+    background: #7ed321;
+    border: 1px solid #7ed321;
+}
+.timeline-red {
+    background: #e42e44;
+    border: 1px solid #e42e44;
+}
+.arrow-red {
+    border-right: 12px solid #e42e44 !important;
+}
+.arrow-green {
+    border-right: 12px solid #7ed321 !important;
+}
+.commit-id {
+    display: inline;
+    margin-right: 20%;
+    margin-left: 10%;
+    font-family: Avenir;
+    font-size: 14px;
+    font-weight: bold;
+}
+.version {
+    display: inline;
+    font-family: Avenir;
+    font-size: 14px;
+    font-weight: bold;
+}
+.commit-data {
+    margin-right: 35%;
+    margin-left: 10%;
+    display: inline;
+    font-size: 12px;
+    font-family: Avenir;
+}
+.version-data {
+    display: inline;
+    font-size: 12px;
+    font-family: Avenir;
+    /* margin-left: -15%; */
+}
+.data-cont {
+    margin-top: 15px;
+}
+.time {
+    color: #8ca0b3;
+    font-size: 12px;
+    font-family: Avenir;
+}
+.time-cont {
+    margin-top: 15px;
+}
+.title-cont {
+    margin-left: 7%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+}
+.row-margins {
+    margin-bottom: 2vh;
+}
+.down-arrow {
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid transparent !important;
+    border-top: 12px solid #209ae5;
+    border-right: 12px solid transparent !important;
+    display: block;
+    height: 0;
+    position: absolute;
+    top: 18%;
+    width: 0;
+    left: 28%;   
+}

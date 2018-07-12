@@ -1,0 +1,33 @@
+<div class="container no-padding top-35 margin-left-5">
+  <div class="col-md-12 bg-white">
+    <p class="heading avenir top-15">Numerical Variable vs Target Category</p>
+  </div> 
+  <div class="col-md-12 bg-white">
+    <div class="col-md-2 top-15 no-padding">
+      <select class="form-control release-filter">
+        <option class="avenir" *ngFor="let option of options">{{option}}</option>
+      </select>
+    </div>
+    <div class="col-md-12">
+      <p class="free-text">Numerical Variable</p>
+    </div>
+  </div>
+  <div class="col-md-12 top-15 no-padding">
+    <div class="col-md-6 bg-white">
+      <p class="heading center avenir top-15">Box plot by category</p>
+      <div class="container-fluid" style="height:25vh;width: 100%; display: inline-block">
+        <canvas id="histogram">
+          {{histogram}}
+        </canvas>
+      </div>
+    </div>
+    <div class="col-md-6 bg-white">
+      <p class="heading center avenir top-15">Histogram by category</p>
+      <div class="container-fluid" style="height:25vh;width: 100%; display: inline-block">
+        <canvas id="boxPlot">
+          {{boxPlot}}
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

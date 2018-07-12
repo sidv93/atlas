@@ -1,0 +1,122 @@
+.no-padding {
+    padding: 0;
+    margin: 0;
+}
+.no-border {
+    border: 0;
+}
+.bg-white {
+    background-color: white;
+}
+.top-25 {
+    margin-top: 25vh;
+}
+.center {
+    text-align: center !important;
+}
+.avenir {
+    font-family: Avenir;
+}
+.border-grey {
+    border-bottom: solid 1px rgba(115, 124, 137, 0.12);
+}
+.top-15 {
+    margin-top: 15px;
+}
+.heading {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.1px;
+    text-align: left;
+    color: #485465;
+}
+.margin-left-5 {
+    margin-left: 2%;
+}
+.margin-right-5 {
+    margin-right: 2%;
+}
+.release-filter {
+    border: none !important;
+    border-radius: 0;
+    box-shadow: none;
+    font-weight: bold;
+}
+.free-text {
+    color: #8ca0b3;
+    font-family: Avenir;
+    font-size: 12px;
+}
+#chartContainer{
+    height: 600px;
+    width: 360px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    margin: auto 600px;
+    transform-origin: left top;
+}
+:host::ng-deep.canvasjs-chart-tooltip{
+    -webkit-transform: rotate(-90deg) !important;
+    -moz-transform: rotate(-90deg) !important;
+    -o-transform: rotate(-90deg) !important;
+    -ms-transform: rotate(-90deg) !important;
+    transform: rotate(-90deg) !important;
+}
+:host::ng-deep.canvasjs-chart-credit {
+    display: none !important;
+}
+.univariate-container {
+    height: 80vh;
+}
+.middle-align {
+    margin-top: 20vh;
+}
+.row-box {
+    display: inline-block;
+    background-color: white;
+    width: 46%;
+    vertical-align: top;
+    height: 50vh !important;
+}
+.commit-container {
+    background-color: #ffffff;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+}
+.card-headings {
+    color: #485465;
+    font-family: Avenir;
+    display: inline-block;
+}
+.pad-5 {
+    padding-left: 5%;
+}
+.no-border {
+    border: none;
+}
+.margin-2 {
+    margin-left: 2%;
+}
+.project-name {
+    font-family: Avenir;
+    text-align: left;
+    color: #8ca0b3;
+    display: block;
+}
+.width-30 {
+    width: 30%;
+}
+.border-bottom {
+    border-bottom: solid 1px rgba(115, 124, 137, 0.12)
+}
+.margin-1 {
+    margin-top: 1vh;
+}
+.width-50 {
+    width: 50%;
+}
+.width-95 {
+    width: 95%;
+}

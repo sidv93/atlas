@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#EFF3F6" d="M-766-11H85v1167h-851z"/>
+        <path fill="#FFF" d="M-766-11H85v50h-851z"/>
+        <g>
+            <circle cx="15" cy="15" r="15" fill="#9D8CB3"/>
+            <text fill="#FFF" font-family="Verdana" font-size="12">
+                <tspan x="6" y="18">AM</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

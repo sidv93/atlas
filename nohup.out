@@ -1,0 +1,24 @@
+
+> atlas-gui@0.0.0 start /home/ec2-user/bck/Atlast-8June
+> ng serve --host ec2-34-205-159-192.compute-1.amazonaws.com
+
+** NG Live Development Server is listening on ec2-34-205-159-192.compute-1.amazonaws.com:4200, open your browser on http://ec2-34-205-159-192.compute-1.amazonaws.com:4200/ **
+[0mDate: [1m[37m2018-06-11T05:32:01.956Z[39m[22m[0m
+[0mHash: [1m[37m743b7dde28f3f4b22a26[39m[22m[0m
+[0mTime: [1m[37m18553[39m[22mms[0m
+[0mchunk {[1m[33mcode-defect-prediction.module[39m[22m} [1m[32mcode-defect-prediction.module.chunk.js[39m[22m () 25.9 kB [1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33mcommon[39m[22m} [1m[32mcommon.chunk.js[39m[22m (common) 66.3 kB [1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33mdeploy.module[39m[22m} [1m[32mdeploy.module.chunk.js[39m[22m () 221 kB [1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33mdeploy.module.0[39m[22m} [1m[32mdeploy.module.0.chunk.js[39m[22m () 67.9 kB [1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33mevaluate.module[39m[22m} [1m[32mevaluate.module.chunk.js[39m[22m () 170 kB [1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33mexplore.module[39m[22m} [1m[32mexplore.module.chunk.js[39m[22m () 234 kB [1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33minline[39m[22m} [1m[32minline.bundle.js[39m[22m (inline) 5.79 kB [1m[33m[entry][39m[22m[1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33mmain[39m[22m} [1m[32mmain.bundle.js[39m[22m (main) 1.45 MB [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33moverview.module[39m[22m} [1m[32moverview.module.chunk.js[39m[22m () 142 kB [1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33moverview.module.0[39m[22m} [1m[32moverview.module.0.chunk.js[39m[22m () 64.6 kB [1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33mpolyfills[39m[22m} [1m[32mpolyfills.bundle.js[39m[22m (polyfills) 555 kB [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33mstyles[39m[22m} [1m[32mstyles.bundle.js[39m[22m (styles) 41.5 kB [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33mtest-case-selection.module[39m[22m} [1m[32mtest-case-selection.module.chunk.js[39m[22m () 24.8 kB [1m[32m [rendered][39m[22m[0m
+[0mchunk {[1m[33mvendor[39m[22m} [1m[32mvendor.bundle.js[39m[22m (vendor) 14.5 MB [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m
+
+webpack: Compiled successfully.

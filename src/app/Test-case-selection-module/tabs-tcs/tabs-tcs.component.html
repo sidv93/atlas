@@ -1,0 +1,26 @@
+<div class="col-md-12 top-tabs bg-white">
+  <div class="col-md-1">
+    <div class="tab" (click)="selectedTab = 0; setSession()">
+      <a routerLink="overview" [ngClass]="{'tab-selected': selectedTab === 0, 'black': selectedTab === 0}"
+        class="no-underline">Overview</a>
+    </div>
+  </div>
+  <div class="col-md-1">
+    <div class="tab not-allowed">
+      <a [ngClass]="{'tab-selected': selectedTab === 1, 'black': selectedTab === 1}"
+        class="no-underline">Explore</a>
+    </div>
+  </div>
+  <div class="col-md-1">
+    <div class="tab">
+      <a routerLink="optimise" [ngClass]="{'tab-selected': selectedTab === 2, 'black': selectedTab === 2}"
+        class="no-underline">Optimise</a>
+    </div>
+  </div>
+  <div class="col-md-1">
+    <div class="tab" (click)="selectedTab = 3; setSession()">
+      <a routerLink="deploy" [ngClass]="{'tab-selected': selectedTab === 3, 'black': selectedTab ===3 }"
+        class="no-underline">Infer</a>
+    </div>
+  </div>
+</div>

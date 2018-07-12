@@ -1,0 +1,8 @@
+.clearfix {
+  overflow: auto;
+}
+.clearfix::after, .clearfix::before {
+  content: '';
+  clear: both;
+  display: table;
+}

@@ -1,0 +1,16 @@
+
+.cont {
+    /* background-color: white; */
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.full-width {
+    width: 100%;
+    margin-top: 5vh;
+}
+iframe {
+    margin-top:1.6%;
+}
+.iframe-container {
+    margin:  0 0 5% -0.5%;
+ }

@@ -1,0 +1,7 @@
+<div class="left-pane no-padding" [ngClass]="{'left-pane-width': leftPaneExpand === true}">
+    <app-left-pane></app-left-pane>
+</div>
+<div class="right-pane clearfix" [ngClass]="{'right-pane-width': leftPaneExpand === true}">
+    <app-headers></app-headers>
+    <router-outlet></router-outlet>
+</div>

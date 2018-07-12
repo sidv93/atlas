@@ -1,0 +1,55 @@
+<div class="container bg-grey">
+  <div class="col-md-4 loc-container top-25">
+    <p class="card-headings pad-5 top-15">Lines Of Code</p>
+    <img src="assets/images/more-icon_4@2x.png" srcset="img/more-icon@2x.png 2x,
+                               img/more-icon@3x.png 3x" class="more-icon pad-right-5">
+    <div class="container" style="height:25vh;width: 100%; display: inline-block">
+      <canvas id="linesOfCode" >
+          <!-- <canvas id="linesOfCode" #lineCode> -->
+        {{linesOfCode}}
+      </canvas>
+    </div>
+  </div>
+  <div class="col-md-7 loc-container top-25" style="height: 70vh; float:right; overflow-y: auto">
+    <div class="file-title-container">
+      <div class="title-cont">
+        <p class="file-name-title">File Name</p>
+        <p class="file-name">{{this.fileData[0].file}}</p>
+      </div>
+    </div>
+    <span class="down-arrow"></span>
+    <div class="v-line"></div>
+    <div class="col-md-12 row-margins" *ngFor="let commit of filteredData;">
+      <div class="col-md-3">
+        <div class="time-cont">
+          <p class="time">{{commit.time[0]}}</p>
+          <p class="time">{{commit.time[1]}} {{amOrPm(commit.time[1])}}</p>
+        </div>
+      </div>
+      <span class="arrow" [ngClass]="{'arrow-green': commit.prediction === 'Clean', 'arrow-red': commit.prediction === 'Buggy'}"></span>
+      <span class="timeline-icon" [ngClass]="{'timeline-green': commit.prediction === 'Clean', 'timeline-red': commit.prediction === 'Buggy'}"></span>
+      <div class="col-md-offset-2 col-md-6">
+        <div class="right-data">
+          <div class="data-cont">
+            <p class="commit-id">Commit ID</p>
+            <p class="version">Version</p>
+            <p class="commit-data">{{commit.commitid}}</p>
+            <p class="version-data">{{commit.version}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-4 loc-container top-25">
+    <p class="card-headings pad-5 top-15">Code Complexity</p>
+    <img src="assets/images/more-icon_4@2x.png" srcset="img/more-icon@2x.png 2x,
+                                 img/more-icon@3x.png 3x" class="more-icon pad-right-5">
+    <div class="container" style="height:25vh;width: 100%; display: inline-block">
+      <!-- <canvas id="codeComplexity" #complexity> -->
+          <canvas id="codeComplexity" >
+        {{codeComplexity}}
+      </canvas>
+    </div>
+  </div>
+</div>

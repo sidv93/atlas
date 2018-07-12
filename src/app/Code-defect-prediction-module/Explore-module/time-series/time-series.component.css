@@ -1,0 +1,12 @@
+.no-padding {
+    margin: 0;
+    padding: 0;
+}
+.top-35 {
+    margin-top: 35vh;
+}
+.bg-white {
+    background-color: white;
+    margin-left: 5%;
+    min-height: 30vh;
+}

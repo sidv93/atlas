@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="45" viewBox="0 0 88 45">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#EEE" d="M.52.029h1V44.27h-1z"/>
+        <path fill="#B5B8B9" fill-opacity=".25" d="M86.436 26.244l-4.383 11.748-3.658 3.912-5.544-9.467-5.68-4.47-4.857 10.025-8.386-2.79-7.392-1.452-7.88 5.426-5.352-7.413-6.302 3.217-7.99-4.319-9.08 4.41-2.753-8.933-5.743-3.911V44.27h84.98z" opacity=".6"/>
+        <text fill="#7ED321" font-family="Avenir-Heavy, Avenir" font-size="9" font-weight="600">
+            <tspan x="34.59" y="35.795">20%</tspan>
+        </text>
+        <text font-family="Avenir-Medium, Avenir" font-size="12" font-weight="400">
+            <tspan x="29.796" y="20.768" fill="#687284">26</tspan> <tspan x="43.14" y="20.768" fill="#9B9B9B" font-size="9">/</tspan> <tspan x="46.641" y="20.768" fill="#9B9B9B" font-family="Avenir-Book, Avenir" font-size="8" font-weight="normal">52</tspan>
+        </text>
+        <path fill="#EEE" d="M86.436.029h1V44.27h-1z"/>
+    </g>
+</svg>

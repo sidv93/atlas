@@ -1,0 +1,46 @@
+.tab-selected {
+    border-bottom: solid 3px #209ae5;
+  }
+  .top-25 {
+    margin-top: 25px;
+  }
+  .tab {
+    color: #324659;
+    font-family: Avenir;
+    cursor: pointer;
+}
+.no-underline {
+  padding-bottom: 5%;
+  text-decoration: none;
+  color: grey;
+}
+.black {
+  color: black;
+}
+.not-allowed {
+  cursor: not-allowed;
+}
+.no-border {
+  border: none !important;
+}
+.no-padding {
+  padding: 0;
+}
+.release-filter {
+  border: none !important;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: bold;
+  width: 70%;
+}
+.bg-white {
+  background-color: white;
+}
+.top-15 {
+  margin-top: 15px;
+}
+.free-text {
+  color: #8ca0b3;
+  font-family: Avenir;
+  font-size: 12px;
+}

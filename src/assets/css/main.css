@@ -1,0 +1,14 @@
+.pad-left-10 {
+    padding-left: 10%;
+}
+.pad-right-10 {
+    padding-right: 10%;
+}
+@font-face {
+    font-family: "Avenir";
+    src: url("/assets/fonts/AEH.ttf");
+    /* src: 
+    url("css/fonts/Harabara.woff") format("woff"),
+    url("css/fonts/Harabara.otf") format("opentype"),
+    url("css/fonts/Harabara.svg#filename") format("svg"); */
+}

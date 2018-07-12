@@ -1,0 +1,68 @@
+<div class="container no-padding">
+  <div class="bg-white">
+    <table class="table table-striped table-responsive">
+      <caption>
+        <div class="col-md-12">
+          <div class="col-md-3">
+            <span class="card-headings">Runs</span>&nbsp;&nbsp;
+            <br/>
+            <!-- <span class="free-text">Pipeline</span> -->
+          </div>
+          <div class="col-md-1" class="legend-more">
+            <img src="assets/images/more-icon_4@2x.png" srcset="img/more-icon@2x.png 2x,
+                                img/more-icon@3x.png 3x">
+          </div>
+        </div>
+      </caption>
+      <thead>
+        <tr style="background-color: #2a3441; color: white;font-family: Avenir">
+          <th class="center">
+            Run ID
+          </th>
+          <th class="center">
+            Run Start Time
+          </th>
+          <th class="center">
+            Run End Time
+          </th>
+          <th class="center">
+            Total Execution Time
+          </th>
+          <th class="center">
+            Results
+          </th>
+        </tr>
+      </thead>
+      <tbody style="font-family: Avenir; font-size: 13px">
+        <tr class="center" *ngIf="loading">
+          <td colspan="6">
+            <i class="fa fa-spinner fa-spin" style="font-size:32px"></i>
+          </td>
+        </tr>
+        <ng-container *ngIf="!loading">
+          <tr *ngFor="let run of runs| paginate: {
+            itemsPerPage: 10,
+            currentPage: currentPage }">
+            <td class="form-table center">{{run.runId}}</td>
+            <td class="form-table center">
+              {{run.runStartTime | date: 'medium'}}
+            </td>
+            <td class="form-table center">{{run.runEndTime | date: 'medium'}}</td>
+            <td class="form-table center">{{run.duration}}</td>
+            <td class="form-table center">
+              <button class="form-control results" (click)="viewResults()">Results</button>
+            </td>
+          </tr>
+          <tr *ngIf="!loading">
+            <ng-container *ngIf="runs.length > 10">
+              <td colspan="5" class="center">
+                <pagination-controls class="bg-grey" (pageChange)="currentPage = $event"></pagination-controls>
+              </td>
+            </ng-container>
+
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

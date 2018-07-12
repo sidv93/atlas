@@ -1,0 +1,79 @@
+.cont {
+    background-color: white;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.card-headings {
+    color: #485465;
+    font-family: Avenir;
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 2%;
+}
+.top-25 {
+    margin-top: 25px;
+}
+.top-20 {
+    margin-top: 20px;
+}
+.bottom-15 {
+    margin-bottom: 15px;
+}
+.free-text {
+    color: #8ca0b3;
+    font-family: Avenir;
+    font-size: 12px;
+    margin-left: 2%;
+  }
+.center {
+    text-align: center;
+}
+.pointer {
+    cursor: pointer;
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.grey {
+    color: grey;
+}
+.filters {
+    border: none !important;
+    border-radius: 0;
+    box-shadow: none;
+}
+.bg-grey /deep/ .ngx-pagination .current{
+    background: #eaeaea;
+    color: grey;
+}
+.btn-borderless {
+    border: none;
+    outline: none;
+    background-color: #F4F5F6;
+}
+.btn-borderless:hover {
+    background-color: inherit;
+}
+.input-icon{
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 0.5em); /* Keep icon in center of input, regardless of the input height */
+  }
+  .input-wrapper{
+    position: relative;
+  }
+  .legend-more {
+    float: right;
+    margin-top: 15px;
+  }
+.bg-grey /deep/ .ngx-pagination .pagination-next{
+    /* background-image: url("/assets/images/pagination-unselected-next@2x.png"); */
+}
+.bg-grey /deep/ .ngx-pagination .pagination-previous{
+}
+.width-50 {
+    width: 50%;
+}

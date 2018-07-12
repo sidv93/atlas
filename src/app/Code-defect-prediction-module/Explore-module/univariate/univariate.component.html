@@ -1,0 +1,44 @@
+<div class="no-padding top-25 margin-left-5">
+  <div class="width-95">
+    <div class="col-md-12 bg-white">
+      <div class="col-md-2 top-15 no-padding">
+        <select class="form-control release-filter width-50" name="project" [(ngModel)]="project">
+          <option [value]="project" *ngFor="let project of projects">{{project.projectName}}</option>
+        </select>
+      </div>
+      <div class="col-md-12">
+        <p class="free-text">Project</p>
+      </div>
+    </div>
+    <div class="col-md-12 bg-white">
+      <div class="col-md-2 top-15 no-padding">
+        <select class="form-control release-filter" (change)="changeFilter()" name="uni-filter" [(ngModel)]="optionSelected">
+          <option class="avenir" [value]="option" *ngFor="let option of options">{{option}}</option>
+        </select>
+      </div>
+      <div class="col-md-12">
+        <p class="free-text">Numerical Variable</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-box margin-1 commit-container">
+    <p class="card-headings pad-5 top-15">Histogram</p>
+    <br>
+    <div class="border-bottom"></div>
+    <div class="container-fluid" style="height:30vh;width: 100%; display: inline-block; margin-top: 2vh">
+      <canvas id="histogram" #bar>
+        {{histogram}}
+      </canvas>
+    </div>
+  </div>
+
+  <div class="row-box margin-1 margin-2 commit-container">
+    <p class="card-headings pad-5 top-15">Box Plot</p>
+    <br>
+    <div class="border-bottom"></div>
+    <div class="container-fluid" style="height:30vh;width: 100%; display: inline-block; margin-top: 2vh; position: relative">
+      <div id="chartContainer" style="width: 300; height: 300; position: absolute; left: -30%"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,153 @@
+<div class="no-padding">
+  <div class="chart-container">
+    <div class="col-md-12">
+      <div class="left-options">
+        <span class="free-text">Execution Time</span>
+        <input type="text" class="form-control exec-time" disabled [(ngModel)]="graphExecutionTime" name="exec-time">
+        <!-- <span class="free-text">Select</span>
+        <select class="form-control select" name="p-filter" [(ngModel)]="graphPriority" (change)="graphPriorityFilter()">
+          <option>All</option>
+          <option>P1</option>
+          <option>P2</option>
+          <option>P3</option>
+          <option>P4</option>
+          <option>P5</option>
+        </select> -->
+      </div>
+      <div class="right-buttons">
+        <button class="btn btn-default">Schedule</button>
+        <button class="btn btn-primary">Export</button>
+        <button class="btn btn-success" (click)="promote()">Promote</button>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="100" class="slider" id="myRange" #range (change)="rangeChange(range.value)">
+      </div>
+    </div>
+    <div class="container-fluid" style="height:35vh; width: 100%; display: inline-block; margin-top: 5vh;">
+      <canvas id="regressionChart">
+        {{regressionChart}}
+      </canvas>
+    </div>
+    <!-- <div class="priority-cont">
+      <div class="priorities" [ngClass]="{'priority-background': rangePriority >= 1 && graphPriority === 'All',
+              'p-back': graphPriority === 'P1' }">
+        P1
+      </div>
+      <div class="priorities" [ngClass]="{'priority-background': rangePriority >= 2 && graphPriority === 'All',
+              'p-back': graphPriority === 'P2' }">
+        P2
+      </div>
+      <div class="priorities" [ngClass]="{'priority-background': rangePriority >= 3 && graphPriority === 'All',
+              'p-back': graphPriority === 'P3' }">
+        P3
+      </div>
+      <div class="priorities" [ngClass]="{'priority-background': rangePriority >= 4 && graphPriority === 'All',
+              'p-back': graphPriority === 'P4' }">
+        P4
+      </div>
+      <div class="priorities no-right" [ngClass]="{'priority-background': rangePriority == 5 && graphPriority === 'All',
+              'p-back': graphPriority === 'P5' }">
+        P5
+      </div>
+    </div> -->
+    <br>
+    <br>
+  </div>
+  <div class="chart-container">
+    <div class="">
+      <div class="left-options">
+        <!-- <span class="free-text">Priority</span>
+        <select class="form-control select" name="priority" [(ngModel)]="tablePriority" (change)="changePriority()">
+          <option>All</option>
+          <option>P1</option>
+          <option>P2</option>
+          <option>P3</option>
+          <option>P4</option>
+          <option>P5</option>
+        </select> -->
+        <!-- <span class="free-text">Set Time limit</span>
+        <select class="form-control select" name="g-time" [(ngModel)]="tableExecutionTime" (change)="tableTimeFilter()">
+          <option>All</option>
+          <option *ngFor="let option of timeLimits">{{option}}</option>
+        </select>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="free-text">in</span>
+        <select class="form-control select" disabled>
+          <option>Hours</option>
+        </select> -->
+      </div>
+      <div class="right-buttons">
+        <form [formGroup]="searchForm">
+          <input type="text" class="form-control" [formControl]="searchForm.controls['search']" placeholder="Search..(Commit, Author)">
+        </form>
+      </div>
+    </div>
+    <div class="top-3">
+      <table class="table table-responsive table-bordered table-striped">
+        <thead class="table-head">
+          <tr>
+            <th class="table-heading">Expand</th>
+            <th class="table-heading">Test Case ID</th>
+            <th class="table-heading">Last Execution</th>
+            <th class="table-heading">First Execution</th>
+            <th class="table-heading" colspan="3">
+              <span class="left col-md-12">Failures</span>
+              <div class="col-md-4">
+                <span class="left">1 Month</span>
+              </div>
+              <div class="col-md-4">
+                <span class="left">1M - 2M</span>
+              </div>
+              <div class="col-md-4">
+                <span class="left">2M - 3M</span>
+              </div>
+            </th>
+            <th class="table-heading">Execution Time</th>
+            <th class="table-heading">Priority Rank</th>
+            <th class="table-heading">Priority Group</th>
+            <th class="table-heading">Regression</th>
+            <th class="table-heading">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="center" *ngIf="loading">
+            <td colspan="10">
+              <i class="fa fa-spinner fa-spin" style="font-size:32px"></i>
+            </td>
+          </tr>
+          <ng-container *ngIf="!loading">
+            <tr *ngFor="let item of tableData | paginate:{
+                  itemsPerPage:10,
+                  currentPage:currentPage}">
+              <td class="center">
+                <i class="fa fa-chevron-right"></i>
+              </td>
+              <td class="free-text">{{item.tc_id}}</td>
+              <td class="free-text">{{item.last_execution}}</td>
+              <td class="free-text">{{item.first_execution}}</td>
+              <td class="free-text">{{item.failure_in_last['1M']}}</td>
+              <td class="free-text">{{item.failure_in_last['1M-2M']}}</td>
+              <td class="free-text">{{item.failure_in_last['2M-3M']}}</td>
+              <td class="free-text">{{item.execution_time}}</td>
+              <td class="free-text">{{item.priority_rank}}</td>
+              <td class="free-text">{{item.priority_group}}</td>
+              <td class="free-text">{{item.regression}}</td>
+              <td class="">
+                <button class="btn btn-default">
+                  <span *ngIf="item.regression === 'N'" class="green">Promote</span>
+                  <span *ngIf="item.regression === 'Y'" class="red">Demote</span>
+                </button>
+              </td>
+            </tr>
+            <tr *ngIf="!loading">
+              <td colspan="10" class="center">
+                <pagination-controls class="bg-grey" (pageChange)="currentPage=$event"></pagination-controls>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+      <!-- </div> -->
+    </div>
+  </div>

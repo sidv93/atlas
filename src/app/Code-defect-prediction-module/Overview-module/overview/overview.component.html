@@ -1,0 +1,258 @@
+<div class="col-md-12">
+  <div class="row margin-2" style="width: 95%;">
+    <table class="table table-bordered top-25 table-font">
+      <caption>
+        <div class="margin-2 top-10">
+          <div class="caption-div-parentdetails">
+            <span class="avenir Projects">Projects</span>
+            <br/>
+            <span class="free-text noOfProjects">
+              <span *ngIf="projects">{{projects.length}}</span> project(s)</span>
+          </div>
+          <div class="content-right">
+            <!-- <img src="assets/images/more-icon_4@2x.png" srcset="img/more-icon@2x.png 2x,
+                img/more-icon@3x.png 3x" class="legend-more"> -->
+            <i class="fa fa-ellipsis-h font-28"></i>
+
+          </div>
+        </div>
+
+      </caption>
+      <thead class="table-head Rectangle-4">
+        <tr>
+          <td class="chekin-detail font-12">Project
+            <br>Checkin Date</td>
+          <td class="table-heading">1 Day</td>
+          <td class="table-heading">1 Week</td>
+          <td class="table-heading">1 Month</td>
+          <td class="table-heading">6 Month</td>
+          <td class="table-heading">1 Year</td>
+          <td class="table-heading">All Years</td>
+          <td class="table-heading">Model Accuracy</td>
+        </tr>
+      </thead>
+      <tbody class="project-details-body">
+        <tr class="center" *ngIf="loading">
+          <td colspan="9">
+            <i class="fa fa-spinner fa-spin" style="font-size:32px"></i>
+          </td>
+        </tr>
+        <ng-container *ngIf="!loading && productData">
+          <tr *ngFor="let project of productData.projectList | paginate: {
+              itemsPerPage: 10,
+              currentPage: currentPage }">
+            <td class="chekin-detail">
+              <span class="project-title">
+               {{project.projectName}}
+              </span>
+              <br>
+              <span class="light-text">
+                <span *ngIf="globalService.product.productName === 'ISS'">
+                  Sep 8, 2017, 12:24:00 PM
+                </span>
+                <span *ngIf="globalService.product.productName === 'Felix'">
+                  May 21, 2018, 9:58:00 AM
+                </span>
+              </span>
+            </td>
+            <td class="graph graph-80">
+              <span *ngIf="project.projects.percent1d; then display1dp else hyphen"></span>
+              <ng-template #display1dp>
+                <span class="percentage-val">{{project.projects.percent1d.toPrecision(3)}}%</span>
+              </ng-template>
+              <ng-template #hyphen>
+                <span class="percentage-val">-</span>
+              </ng-template>
+              <span *ngIf="project.projects.checkins1d; then display1dc else hyphen"></span>
+              <ng-template #display1dc>
+                <span class="checkin-text">{{project.projects.checkins1d}}</span>
+              </ng-template>
+              <ng-template #hyphen>
+                <span class="percentage-val">-</span>
+              </ng-template>
+            </td>
+            <td class="graph graph-50">
+              <span *ngIf="project.projects.percent1w; then display1wp else hyphen"></span>
+              <ng-template #display1wp>
+                <span class="percentage-val">{{project.projects.percent1w.toPrecision(3)}}%</span>
+              </ng-template>
+              <ng-template #hyphen>
+                <span class="percentage-val">-</span>
+              </ng-template>
+              <span *ngIf="project.projects.checkins1w; then display1wc else hyphen"></span>
+              <ng-template #display1wc>
+                <span class="checkin-text">{{project.projects.checkins1w}}</span>
+              </ng-template>
+              <ng-template #hyphen>
+                <span class="percentage-val">-</span>
+              </ng-template>
+            </td>
+            <td class="graph graph-20">
+              <span *ngIf="project.projects.percent1m; then display1mp else hyphen"></span>
+              <ng-template #display1mp>
+                <span class="percentage-val">{{project.projects.percent1m.toPrecision(3)}}%</span>
+              </ng-template>
+              <ng-template #hyphen>
+                <span class="percentage-val">-</span>
+              </ng-template>
+              <span *ngIf="project.projects.checkins1m; then display1mc else hyphen"></span>
+              <ng-template #display1mc>
+                <span class="checkin-text">{{project.projects.checkins1m}}</span>
+              </ng-template>
+              <ng-template #hyphen>
+                <span class="percentage-val">-</span>
+              </ng-template>
+            </td>
+            <td class="graph graph-80">
+              <span *ngIf="project.projects.percent6m; then display6mp else hyphen"></span>
+              <ng-template #display6mp>
+                <span class="percentage-val">{{project.projects.percent6m.toPrecision(3)}}%</span>
+              </ng-template>
+              <ng-template #hyphen>
+                <span class="percentage-val">-</span>
+              </ng-template>
+              <span *ngIf="project.projects.checkins6m; then display6mc else hyphen"></span>
+              <ng-template #display6mc>
+                <span class="checkin-text">{{project.projects.checkins6m}}</span>
+              </ng-template>
+              <ng-template #hyphen>
+                <span class="percentage-val">-</span>
+              </ng-template>
+            </td>
+            <td class="graph graph-50">
+              <span *ngIf="project.projects.percent1y; then display1yp else hyphen"></span>
+              <ng-template #display1yp>
+                <span class="percentage-val">{{project.projects.percent1y.toPrecision(3)}}%</span>
+              </ng-template>
+              <ng-template #hyphen>
+                <span class="percentage-val">-</span>
+              </ng-template>
+              <span *ngIf="project.projects.checkins1y; then display1yc else hyphen"></span>
+              <ng-template #display1yc>
+                <span class="checkin-text">{{project.projects.checkins1y}}</span>
+              </ng-template>
+              <ng-template #hyphen>
+                <span class="percentage-val">-</span>
+              </ng-template>
+            </td>
+            <td class="graph graph-20">
+              <span *ngIf="project.projects.percentAll; then displayAllp else hyphen"></span>
+              <ng-template #displayAllp>
+                <span class="percentage-val">{{project.projects.percentAll.toPrecision(3)}}%</span>
+              </ng-template>
+              <ng-template #hyphen>
+                <span class="percentage-val">-</span>
+              </ng-template>
+              <span *ngIf="project.projects.checkinsAll; then displayAllc else hyphen"></span>
+              <ng-template #displayAllc>
+                <span class="checkin-text">{{project.projects.checkinsAll}}</span>
+              </ng-template>
+              <ng-template #hyphen>
+                <span class="percentage-val">-</span>
+              </ng-template>
+            </td>
+
+            <td class="graph">
+              <span class="percentage-val">{{project.modelAccuracy}}%</span>
+              <span class="checkin-text">
+                <ng-container *ngIf="globalService.product.productName === 'Felix'">
+                  LR
+                </ng-container>
+                <ng-container *ngIf="globalService.product.productName === 'ISS'">
+                  MP
+                </ng-container>
+              </span>
+            </td>
+          </tr>
+        </ng-container>
+        <tr *ngIf="!loading && productData.projectList.length > 5">
+          <td colspan="8" class="center">
+            <pagination-controls class="page-grey" (pageChange)="currentPage = $event"></pagination-controls>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row commit-container margin-2 top-25" style="width: 95%;">
+    <div class="col-md-12 border-grey">
+      <div class="col-md-6 top-15 no-padding">
+        <div class="col-md-3 no-padding">
+          <select class="form-control release-filter" name="project" [(ngModel)]="project" (change)="changeProject()">
+            <option [value]="project" *ngFor="let project of projects">
+              {{project.projectName}}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-md-6 top-25 pad-left-20">
+        <div class="bullet inline bullet-blue"></div>&nbsp;
+        <span class="inline legend-right font-grey">Clean</span>
+        <div class="bullet inline bullet-light-blue"></div>&nbsp;
+        <span class="inline legend-right font-grey">Buggy</span>
+        <i class="fa fa-ellipsis-h font-28 legend-more"></i>
+      </div>
+      <div class="col-md-12 border-grey">
+        <p class="project-name">Project Summary</p>
+      </div>
+    </div>
+
+    <div class="col-md-8 top-15 bottom-15 container-fluid">
+      <div [ngClass]="{'hidden': noRecords}">
+        <canvas id="stackedBar" #stackbar>
+          {{stackedBar}}
+        </canvas>
+      </div>
+      <div [ngClass]="{'hidden': !noRecords}">
+        <p class="free-text no-records">{{configuration.noRecords}}</p>
+      </div>
+    </div>
+    <div class="col-md-4 top-15 bottom-15 container-fluid">
+      <div class="col-md-10">
+        <canvas id="doughnutCircle" style="height: 15vh" #doughnutCircle>
+          {{doughnutCircle}}
+        </canvas>
+      </div>
+      <p class="prediction-text-1 percentage blue">{{clean}}%
+        <span class="clean-buggy blue">Clean</span>
+      </p>
+      <p class="prediction-text-2 percentage light-blue">{{buggy}}%
+        <span class="clean-buggy light-blue">Buggy</span>
+      </p>
+      <div class="pie-legend-1">
+        <div class="bullet inline bullet-blue"></div>
+        <span class="inline legend-right avenir">{{clean}}% Clean</span>
+        <br>
+      </div>
+      <div class="pie-legend-2">
+        <div class="bullet inline bullet-light-blue"></div>
+        <span class="inline legend-right avenir">{{buggy}}% Buggy</span>
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="row margin-2 top-25 bottom-25" style="width: 100%">
+
+    <div class="row-box right-2 commit-container">
+      <p class="card-headings pad-5 top-15">Files Modified</p>
+      <i class="fa fa-ellipsis-h font-28 font-grey more-icon pad-right-5"></i>
+      <p class="project-name pad-5">Top ten commits</p>
+      <div class="container-fluid" style="height:25vh;width: 100%; display: inline-block">
+        <canvas id="barchartvertical" #bar>
+          {{barChart}}
+        </canvas>
+      </div>
+    </div>
+    <div class="row-box  commit-container">
+      <p class="card-headings pad-5 top-15">Author Commits</p>
+      <i class="fa fa-ellipsis-h font-28 font-grey more-icon pad-right-5"></i>
+      <p class="project-name pad-5">Top five contributors</p>
+      <div class="container-fluid" style="height:25vh; width: 100%; display: inline-block">
+        <canvas id="barcharthorizontal" #horizontalBar>
+          {{horizontalBarChart}}
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>
